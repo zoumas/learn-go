@@ -7,13 +7,13 @@ This is the first Go course in my run through the boot.dev DevOps path, which fo
 ## Layout
 
 ```
-chNN-<topic>/
-  NN-<lesson-slug>/   one lesson: the solution and boot.dev's tests when provided
+chNN/
+  lNN/        one lesson: the solution and boot.dev's tests when provided
 notes/
-  chNN-<topic>.md     notes for each chapter
+  chNN.md     notes for each chapter
 ```
 
-Run a lesson with `go run ./ch01-variables/01-<slug>`. Run all tests with `go test ./...`.
+Run a lesson with `go run ./ch01/l01`. Run all tests with `go test ./...`.
 
 ## Learning goals by chapter
 
