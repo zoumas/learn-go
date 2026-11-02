@@ -39,7 +39,7 @@ The chapter titles come from the course page. The goals under each title are my 
 
 ## Progress
 
-- [ ] 1. Variables
+- [x] 1. Variables
 - [ ] 2. Constants and Formatting
 - [ ] 3. Conditionals
 - [ ] 4. Functions
