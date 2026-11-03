@@ -18,6 +18,7 @@ func newUser(name string, membershipType string) User {
 
 	return User{
 		Name: name,
+		// Before Go 1.27, promoted fields had to be set through the embedded struct:
 		/*
 			Membership: Membership{
 				Type: membershipType,
