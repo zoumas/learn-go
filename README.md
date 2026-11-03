@@ -44,7 +44,7 @@ The chapter titles come from the course page. The goals under each title are my 
 - [x] 3. Conditionals
 - [x] 4. Functions
 - [x] 5. Structs
-- [ ] 6. Interfaces
+- [x] 6. Interfaces
 - [ ] 7. Errors
 - [ ] 8. Loops
 - [ ] 9. Slices
