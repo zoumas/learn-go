@@ -42,7 +42,7 @@ The chapter titles come from the course page. The goals under each title are my 
 - [x] 1. Variables
 - [x] 2. Constants and Formatting
 - [x] 3. Conditionals
-- [ ] 4. Functions
+- [x] 4. Functions
 - [ ] 5. Structs
 - [ ] 6. Interfaces
 - [ ] 7. Errors
