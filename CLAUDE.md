@@ -41,6 +41,8 @@ Style warnings that come from the course's starter code (for example staticcheck
 
 - golangci-lint must be v2.15.0 or newer. Older versions (v2.13.1 and v2.5.0 were checked) cannot read Go 1.27 export data: "export data version 5 is greater than maximum supported version 4".
 - Use the system package, `/usr/bin/golangci-lint` (v2.15.0). There is no `~/.local/bin` copy. Neovim uses the same binary: the dot repo's `nvim/.config/nvim/lua/plugins/go.lua` stops Mason from installing golangci-lint, because Mason puts its own bin first on PATH and a stale copy there would shadow the system one.
+- gopls also comes from the system package, `/usr/bin/gopls` (v0.24.0, built with go1.27.3). gopls type-checks with the `go/types` of the Go that built it, so a copy built with an older Go rejects newer language features. Measured: Mason's gopls v0.20.0 (go1.25.1) reported `unknown field Type in struct literal of type User` on the Go 1.27 promoted-field literal in 5.9. `gopls = { mason = false }` in `go.lua` only stops new installs, so the old Mason copy had to be uninstalled.
+- Mason's gofumpt, goimports and dlv are still built with go1.25.1. When the editor reports an error that the CLI does not, check `go version <binary>` for the tool Neovim runs (`:lua print(vim.fn.exepath("gopls"))`).
 - `~/.golangci.yml` (dot repo, `golangci` package) applies here, because this repo has no config of its own. It enables `fieldalignment` size reports.
 
 ## Progress
