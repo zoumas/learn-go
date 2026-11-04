@@ -39,7 +39,8 @@ Style warnings that come from the course's starter code (for example staticcheck
 
 ## Tooling
 
-- golangci-lint must be v2.15.0 or newer. v2.13.2 cannot read Go 1.27.3 export data ("export data version 5 is greater than maximum supported version 4"). The `~/.local/bin` and Neovim Mason copies are both v2.15.0.
+- golangci-lint must be v2.15.0 or newer. Older versions (v2.13.1 and v2.5.0 were checked) cannot read Go 1.27 export data: "export data version 5 is greater than maximum supported version 4".
+- Use the system package, `/usr/bin/golangci-lint` (v2.15.0). There is no `~/.local/bin` copy. Neovim uses the same binary: the dot repo's `nvim/.config/nvim/lua/plugins/go.lua` stops Mason from installing golangci-lint, because Mason puts its own bin first on PATH and a stale copy there would shadow the system one.
 - `~/.golangci.yml` (dot repo, `golangci` package) applies here, because this repo has no config of its own. It enables `fieldalignment` size reports.
 
 ## Progress
