@@ -48,7 +48,7 @@ The chapter titles come from the course page. The goals under each title are my 
 - [x] 7. Errors
 - [x] 8. Loops
 - [x] 9. Slices
-- [ ] 10. Maps
+- [x] 10. Maps
 - [ ] 11. Pointers
 - [ ] 12. Packages and Modules
 - [ ] 13. Channels
