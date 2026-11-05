@@ -46,7 +46,7 @@ The chapter titles come from the course page. The goals under each title are my 
 - [x] 5. Structs
 - [x] 6. Interfaces
 - [x] 7. Errors
-- [ ] 8. Loops
+- [x] 8. Loops
 - [ ] 9. Slices
 - [ ] 10. Maps
 - [ ] 11. Pointers
