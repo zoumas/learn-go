@@ -51,7 +51,7 @@ The chapter titles come from the course page. The goals under each title are my 
 - [x] 10. Maps
 - [x] 11. Pointers
 - [x] 12. Packages and Modules
-- [ ] 13. Channels
+- [x] 13. Channels
 - [ ] 14. Mutexes
 - [ ] 15. Generics
 - [ ] 16. Enums

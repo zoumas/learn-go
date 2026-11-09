@@ -47,7 +47,7 @@ Style warnings that come from the course's starter code (for example staticcheck
 
 ## Progress
 
-Chapters 1 to 12 done (chapter 12: lessons 12.1 to 12.13; its CLI lessons use nested modules in `ch12/hellogo`, `ch12/mystrings` and `ch12/datetest`, so run the gates inside those directories too). `git log --oneline` and `notes/chNN.md` are the source of truth for where the course stands.
+Chapters 1 to 13 done (chapter 12: its CLI lessons use nested modules in `ch12/hellogo`, `ch12/mystrings` and `ch12/datetest`, so run the gates inside those directories too; chapter 13: `ch13/l03` patches a race in the course code and `ch13/l08` runs its test under `testing/synctest`). `git log --oneline` and `notes/chNN.md` are the source of truth for where the course stands.
 
 ## Tests
 
