@@ -47,7 +47,7 @@ Style warnings that come from the course's starter code (for example staticcheck
 
 ## Progress
 
-Chapters 1 to 11 done (chapter 11: lessons 11.1 to 11.9). `git log --oneline` and `notes/chNN.md` are the source of truth for where the course stands.
+Chapters 1 to 12 done (chapter 12: lessons 12.1 to 12.13; its CLI lessons use nested modules in `ch12/hellogo`, `ch12/mystrings` and `ch12/datetest`, so run the gates inside those directories too). `git log --oneline` and `notes/chNN.md` are the source of truth for where the course stands.
 
 ## Tests
 
