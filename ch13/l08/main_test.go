@@ -4,81 +4,84 @@ import (
 	"fmt"
 	"slices"
 	"testing"
+	"testing/synctest"
 	"time"
 )
 
 func TestSaveBackups(t *testing.T) {
-	type testCase struct {
-		expectedLogs []string
-	}
-
-	runCases := []testCase{
-		{
-			expectedLogs: []string{
-				"Nothing to do, waiting...",
-				"Nothing to do, waiting...",
-				"Nothing to do, waiting...",
-				"Taking a backup snapshot...",
-				"Nothing to do, waiting...",
-				"Nothing to do, waiting...",
-				"Nothing to do, waiting...",
-				"Taking a backup snapshot...",
-				"Nothing to do, waiting...",
-				"All backups saved!",
-			},
-		},
-	}
-
-	submitCases := append(runCases, []testCase{}...)
-
-	testCases := runCases
-	if withSubmit {
-		testCases = submitCases
-	}
-
-	skipped := len(submitCases) - len(testCases)
-
-	passed, failed := 0, 0
-	for _, test := range testCases {
-		expectedLogs := test.expectedLogs
-
-		snapshotTicker := time.Tick(1500 * time.Millisecond)
-		saveAfter := time.After(3500 * time.Millisecond)
-		logChan := make(chan string)
-		go saveBackups(snapshotTicker, saveAfter, logChan)
-		actualLogs := []string{}
-		for actualLog := range logChan {
-			fmt.Println(actualLog)
-			actualLogs = append(actualLogs, actualLog)
+	synctest.Test(t, func(t *testing.T) {
+		type testCase struct {
+			expectedLogs []string
 		}
 
-		if !slices.Equal(expectedLogs, actualLogs) {
-			t.Errorf(`---------------------------------
+		runCases := []testCase{
+			{
+				expectedLogs: []string{
+					"Nothing to do, waiting...",
+					"Nothing to do, waiting...",
+					"Nothing to do, waiting...",
+					"Taking a backup snapshot...",
+					"Nothing to do, waiting...",
+					"Nothing to do, waiting...",
+					"Nothing to do, waiting...",
+					"Taking a backup snapshot...",
+					"Nothing to do, waiting...",
+					"All backups saved!",
+				},
+			},
+		}
+
+		submitCases := append(runCases, []testCase{}...)
+
+		testCases := runCases
+		if withSubmit {
+			testCases = submitCases
+		}
+
+		skipped := len(submitCases) - len(testCases)
+
+		passed, failed := 0, 0
+		for _, test := range testCases {
+			expectedLogs := test.expectedLogs
+
+			snapshotTicker := time.Tick(1500 * time.Millisecond)
+			saveAfter := time.After(3500 * time.Millisecond)
+			logChan := make(chan string)
+			go saveBackups(snapshotTicker, saveAfter, logChan)
+			actualLogs := []string{}
+			for actualLog := range logChan {
+				fmt.Println(actualLog)
+				actualLogs = append(actualLogs, actualLog)
+			}
+
+			if !slices.Equal(expectedLogs, actualLogs) {
+				t.Errorf(`---------------------------------
 Test Failed:
 expected:
 %v
 actual:
 %v
 `, sliceWithBullets(expectedLogs), sliceWithBullets(actualLogs))
-			failed++
-		} else {
-			fmt.Printf(`---------------------------------
+				failed++
+			} else {
+				fmt.Printf(`---------------------------------
 Test Passed:
 expected:
 %v
 actual:
 %v
 `, sliceWithBullets(expectedLogs), sliceWithBullets(actualLogs))
-			passed++
+				passed++
+			}
 		}
-	}
 
-	fmt.Println("---------------------------------")
-	if skipped > 0 {
-		fmt.Printf("\n%d passed, %d failed, %d skipped\n", passed, failed, skipped)
-	} else {
-		fmt.Printf("\n%d passed, %d failed\n", passed, failed)
-	}
+		fmt.Println("---------------------------------")
+		if skipped > 0 {
+			fmt.Printf("\n%d passed, %d failed, %d skipped\n", passed, failed, skipped)
+		} else {
+			fmt.Printf("\n%d passed, %d failed\n", passed, failed)
+		}
+	})
 }
 
 func sliceWithBullets[T any](slice []T) string {
