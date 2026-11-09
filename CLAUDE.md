@@ -47,7 +47,7 @@ Style warnings that come from the course's starter code (for example staticcheck
 
 ## Progress
 
-Chapters 1 to 10 done (chapter 10: lessons 10.1 to 10.7). `git log --oneline` and `notes/chNN.md` are the source of truth for where the course stands.
+Chapters 1 to 11 done (chapter 11: lessons 11.1 to 11.9). `git log --oneline` and `notes/chNN.md` are the source of truth for where the course stands.
 
 ## Tests
 
