@@ -1,5 +1,7 @@
 # learn-go
 
+[![Boot.dev Learn Go certificate](https://qvault-webapp-dynamic-assets.storage.googleapis.com/certificates/f163cefa-daeb-4018-8e08-57e37e029b71.jpeg?v=1794403525)](https://www.boot.dev/certificates/f163cefa-daeb-4018-8e08-57e37e029b71)
+
 My solutions and notes for boot.dev's [Learn Go](https://www.boot.dev/courses/learn-golang) course, done lesson by lesson. The course has 148 lessons in 17 chapters and covers idiomatic Go, from variables to concurrency, generics and enums.
 
 This is the first Go course in my run through the boot.dev DevOps path, which focuses on Go, AWS and DevOps.
