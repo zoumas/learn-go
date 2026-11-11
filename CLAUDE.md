@@ -69,5 +69,5 @@ Course complete: all 17 chapters done on 2026-11-11 (chapter 12: its CLI lessons
 
 Both steps are done.
 
-1. The chapter notes are published as one Artifact page, "Learn Go Field Notes": https://claude.ai/artifact/6z3fanfgEtau3Q7QL2db6A (private until shared). Rebuild it with the `bootdev` skill's `tools/notes_page/build.py`.
+1. The chapter notes are published as one Artifact page, "Learn Go Field Notes": https://claude.ai/artifact/6z3fanfgEtau3Q7QL2db6A (private until shared). The same page is served by GitHub Pages from `docs/index.html` on `main`: https://zoumas.github.io/learn-go/. After changing `notes/`, rebuild both with the `bootdev` skill's `tools/notes_page/build.py` (its docstring has the full command; add `--standalone` for `docs/index.html`, which needs a complete HTML document) and commit `docs/index.html` with the notes.
 2. The instructions for future courses live in the `bootdev` skill (dot repo, `claude/.claude/skills/bootdev/`): `course-mode.md`, `templates/CLAUDE.course.md` and `devops-go-playbook.md`.

@@ -6,6 +6,8 @@ My solutions and notes for boot.dev's [Learn Go](https://www.boot.dev/courses/le
 
 This is the first Go course in my run through the boot.dev DevOps path, which focuses on Go, AWS and DevOps.
 
+Read the notes as one page: [Learn Go Field Notes](https://zoumas.github.io/learn-go/). It is built from `notes/` into `docs/index.html` and served by GitHub Pages.
+
 ## Layout
 
 ```
