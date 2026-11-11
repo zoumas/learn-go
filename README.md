@@ -53,6 +53,6 @@ The chapter titles come from the course page. The goals under each title are my 
 - [x] 12. Packages and Modules
 - [x] 13. Channels
 - [x] 14. Mutexes
-- [ ] 15. Generics
+- [x] 15. Generics
 - [ ] 16. Enums
 - [ ] 17. Quiz
