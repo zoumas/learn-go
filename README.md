@@ -55,4 +55,4 @@ The chapter titles come from the course page. The goals under each title are my 
 - [x] 14. Mutexes
 - [x] 15. Generics
 - [x] 16. Enums
-- [ ] 17. Quiz
+- [x] 17. Quiz
